@@ -1,0 +1,9 @@
+#Wait than Lobby time is 1
+
+# No Event under 5 PLAYERS
+STOPIF {PLAYERS} < 5
+
+# 25 % de chance d'avoir un Event
+STOPIF CHANCE100 > 25
+
+EXECUTESCRIPT ScriptName
