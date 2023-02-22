@@ -1,0 +1,30 @@
+ROUNDLOCK TRUE
+INFECTRULE ClassD Scp0492 true
+
+SPAWNRULE Scp0492 1
+SPAWNRULE ClassD
+
+DOOR LOCK ElevatorLczA
+DOOR LOCK ElevatorLczB
+
+ROUNDLOCK FALSE
+
+WAIT:
+WAITSEC 5
+GOTOIF EXPLODEDOOR {ROUNDMINUTES} > 5
+GOTOIF FINISH WAIT {ClassD} < 1 OR {ROUNDMINUTES} > 15
+
+EXPLODEDOOR:
+DOOR DESTROY LightContainment
+DOOR LOCK Scp914Gate
+DOOR OPEN Scp914Gate
+
+WAITUNTIL {ClassD} < 1 OR {ROUNDMINUTES} > 15
+FINISH:
+GOTOIF ClassDWin Scp173Win {ClassD > 0}
+
+ClassDWin:
+CASSIE ClassD win the event | Les ClassD on gagné l'event
+END
+Scp173Win:
+CASSIE Zombie win the event | Zombie a gagné l'event

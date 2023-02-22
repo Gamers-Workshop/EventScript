@@ -1,0 +1,13 @@
+ROUNDLOCK TRUE
+SPAWNRULE ClassD
+
+WAITSEC 30 
+
+WAIT:
+COMMAND SPAWNBIGBALL ALL UwU :)3
+WAITSEC 1 
+
+GOTOIF FINISH WAIT {ClassD} < 1
+
+FINISH:
+ROUNDLOCK FALSE                                                                                                                             
