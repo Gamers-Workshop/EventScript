@@ -1,13 +1,14 @@
 ROUNDLOCK TRUE
 SPAWNRULE ClassD
+WAITUNTIL ROUNDINPROGRESS
 
 WAITSEC 30 
 
 WAIT:
-COMMAND SPAWNBIGBALL ALL UwU :)3
+COMMAND grenade ALL 3 30
 WAITSEC 1 
 
-GOTOIF FINISH WAIT {ClassD} < 1
+GOTOIF FINISH WAIT {CLASSD} < 1
 
 FINISH:
 ROUNDLOCK FALSE                                                                                                                             

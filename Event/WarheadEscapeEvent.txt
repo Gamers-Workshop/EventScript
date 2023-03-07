@@ -1,7 +1,11 @@
 ROUNDLOCK TRUE
-SPAWNRULE ClassD 
-CASSIE WARHEAD WILL START IN 30 SECONDS | La bombe nucléaire du site vas explosé dans 30 secondes
-WAITSEC 30
+WAITUNTIL {ROUNDINPROGRESS}
+SPAWNRULE ClassD
+CASSIE WARHEAD WILL START IN 60 SECONDS | La bombe nucléaire du site vas explosé dans 60 secondes
+
+COUNTDOWN ALL 180 L'ogive vas explosé dans {Countdown} secondes
+
+WAITSEC 60
 WARHEAD START
 WAITUNTIL {ESCAPES} > 0 OR {WARHEADDETONATED}
 
@@ -12,8 +16,10 @@ CASSIE Players succefully escaped | un joueur a réussie a s'enfuire avant l'exp
 GOTO END
 
 ISDETONATED:
-SETROLE ALL Spectator
 CASSIE No player escape | personne n'as réussie a échapé a l'explosion
+ROUNDLOCK FALSE
+STOP
 
 END:
 ROUNDLOCK FALSE
+CASSIE No player escape | personne n'as réussie a échapé a l'explosion
