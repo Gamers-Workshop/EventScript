@@ -1,6 +1,7 @@
 ROUNDLOCK TRUE
-WAITUNTIL {ROUNDINPROGRESS}
+DISABLE RESPAWNS
 SPAWNRULE ClassD
+WAITUNTIL {ROUNDINPROGRESS}
 CASSIE WARHEAD WILL START IN 60 SECONDS | La bombe nucléaire du site vas explosé dans 60 secondes
 
 COUNTDOWN ALL 180 L'ogive vas explosé dans {Countdown} secondes
