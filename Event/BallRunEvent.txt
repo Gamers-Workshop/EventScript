@@ -6,10 +6,11 @@ WAITUNTIL ROUNDINPROGRESS
 WAITSEC 30 
 
 WAIT:
-COMMAND grenade ALL 3 30
-WAITSEC 1 
+
+COMMAND /grenade all 3 300
+WAITSEC 0.5 
 
 GOTOIF FINISH WAIT {CLASSD} < 1
 
 FINISH:
-ROUNDLOCK FALSE                                                                                                                             
+ROUNDLOCK FALSE
